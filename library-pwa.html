@@ -9,7 +9,6 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Library">
     <title>Home Library Manager</title>
-    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkhvbWUgTGlicmFyeSBNYW5hZ2VyIiwKICAic2hvcnRfbmFtZSI6ICJMaWJyYXJ5IiwKICAiZGVzY3JpcHRpb24iOiAiTWFuYWdlIHlvdXIgaG9tZSBsaWJyYXJ5IHdpdGggZWFzZSIsCiAgInN0YXJ0X3VybCI6ICIuLyIsCiAgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsCiAgImJhY2tncm91bmRfY29sb3IiOiAiI2ZmZmZmZiIsCiAgInRoZW1lX2NvbG9yIjogIiM0RjQ2RTUiLAogICJpY29ucyI6IFsKICAgIHsKICAgICAgInNyYyI6ICJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSGRwWkhSb1BTSXhPVElpSUdobGFXZG9kRDBpTVRreUlpQjJhV1YzUW05NFBTSTFJQ0EwSURFNU1pQXhPVElpUGp4eVpXTjBJSGc5SWpBaUlIazlJakFpSUhkcFpIUm9QU0l4T1RJaUlHaGxhV2RvZEQwaU1Ua3lJaUJtYVd4c1BTSWpORVkwTmtVMUlpOCtQSEJoZEdnZ1pEMGlUVGsySURZMElFdzROQ0EyTkNCTU9EUWdPRFFnVERrMklEZzBJRXc1TmlBMk5FcE5OVFlnTVRJNElFdzBPQ0F4TWpnZ1REUTRJREUwTkNBc01USTRJRXcxTmlBeE5EUWdUalkwSURFME5DQk1OVFF0TWpBZ01USTRJRXcxTkMweU1DQXhNamhNTlRRZ09ESWdURFkyTFRJd0lEZ3lJRXcyTmlBeU5DQk1OVFFnTWpRZ1REVTBJRGd5ZWlJZ1ptbHNiRDBpSTJabVppSXZQand2YzNablBnPT0iLAogICAgICAic2l6ZXMiOiAiMTkyeDE5MiIsCiAgICAgICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiCiAgICB9CiAgXQp9">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js"></script>
     <style>
         * {
@@ -19,7 +18,7 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(135deg, #EFF6FF 0%, #E0E7FF 100%);
             min-height: 100vh;
             padding: 1rem;
@@ -355,20 +354,6 @@
             flex: 1;
         }
         
-        @media (max-width: 640px) {
-            .header-title h1 {
-                font-size: 1.25rem;
-            }
-            
-            .books-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-        }
-        
         .icon {
             width: 20px;
             height: 20px;
@@ -478,6 +463,20 @@
         .dropdown-content button:hover {
             background-color: #F3F4F6;
         }
+        
+        @media (max-width: 640px) {
+            .header-title h1 {
+                font-size: 1.25rem;
+            }
+            
+            .books-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -495,19 +494,19 @@
                         <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/>
                         </svg>
-                        Scan Barcode
+                        Scan
                     </button>
                     <button class="btn btn-success" onclick="openManualEntry()">
                         <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
                         </svg>
-                        Manual Entry
+                        Manual
                     </button>
                     <button class="btn btn-primary" onclick="toggleIsbnForm()">
                         <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
                         </svg>
-                        Add by ISBN
+                        ISBN
                     </button>
                     <div class="dropdown">
                         <button class="menu-button" onclick="toggleMenu()">
@@ -521,19 +520,19 @@
                                 <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                                 </svg>
-                                Export to CSV
+                                Export CSV
                             </button>
                             <button onclick="backupData()">
                                 <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"/>
                                 </svg>
-                                Backup Data
+                                Backup
                             </button>
                             <button onclick="document.getElementById('restoreInput').click()">
                                 <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
                                 </svg>
-                                Restore Data
+                                Restore
                             </button>
                         </div>
                     </div>
@@ -545,7 +544,7 @@
                 <div class="input-group">
                     <input type="text" id="isbnInput" placeholder="e.g., 9780439708180">
                     <button class="btn btn-success" onclick="fetchBook()">
-                        <span id="fetchText">Fetch Book</span>
+                        <span id="fetchText">Fetch</span>
                     </button>
                 </div>
             </div>
@@ -596,11 +595,11 @@
             <div class="form-row">
                 <div class="form-field">
                     <label>Bookcase</label>
-                    <input type="text" id="editBookcase" placeholder="e.g., A, 1, Living Room">
+                    <input type="text" id="editBookcase" placeholder="e.g., A, Living Room">
                 </div>
                 <div class="form-field">
                     <label>Shelf Number</label>
-                    <input type="text" id="editShelf" placeholder="e.g., 1, 2, Top">
+                    <input type="text" id="editShelf" placeholder="e.g., 1, Top">
                 </div>
             </div>
             <div class="form-field">
@@ -616,7 +615,7 @@
             </div>
             <div class="modal-actions">
                 <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
-                <button class="btn btn-primary" onclick="saveBook()">Save Book</button>
+                <button class="btn btn-primary" onclick="saveBook()">Save</button>
             </div>
         </div>
     </div>
@@ -625,8 +624,8 @@
         let books = [];
         let editingBookId = null;
         let html5QrCode = null;
+        let currentBookData = {};
         
-        // Load books from localStorage
         function loadBooks() {
             const saved = localStorage.getItem('libraryBooks');
             if (saved) {
@@ -635,7 +634,6 @@
             renderBooks();
         }
         
-        // Save books to localStorage
         function saveBooks() {
             localStorage.setItem('libraryBooks', JSON.stringify(books));
         }
@@ -644,7 +642,6 @@
             document.getElementById('menuDropdown').classList.toggle('show');
         }
         
-        // Close dropdown when clicking outside
         window.onclick = function(event) {
             if (!event.target.matches('.menu-button') && !event.target.matches('.menu-button *')) {
                 const dropdowns = document.getElementsByClassName('dropdown-content');
@@ -654,7 +651,6 @@
             }
         }
         
-        // Barcode Scanner Functions
         function openScanner() {
             document.getElementById('scannerModal').classList.add('active');
             
@@ -664,10 +660,7 @@
             
             html5QrCode.start(
                 { facingMode: "environment" },
-                {
-                    fps: 10,
-                    qrbox: { width: 250, height: 250 }
-                },
+                { fps: 10, qrbox: { width: 250, height: 250 } },
                 onScanSuccess,
                 onScanError
             ).catch(err => {
@@ -683,7 +676,7 @@
         }
         
         function onScanError(errorMessage) {
-            // Ignore scan errors (they happen frequently while scanning)
+            // Ignore
         }
         
         function closeScanner() {
@@ -691,7 +684,6 @@
                 html5QrCode.stop().then(() => {
                     document.getElementById('scannerModal').classList.remove('active');
                 }).catch(err => {
-                    console.error('Error stopping scanner:', err);
                     document.getElementById('scannerModal').classList.remove('active');
                 });
             } else {
@@ -699,7 +691,6 @@
             }
         }
         
-        // Export to CSV
         function exportToCSV() {
             toggleMenu();
             
@@ -726,7 +717,7 @@
             const url = URL.createObjectURL(blob);
             
             link.setAttribute('href', url);
-            link.setAttribute('download', `library_export_${new Date().toISOString().split('T')[0]}.csv`);
+            link.setAttribute('download', `library_${new Date().toISOString().split('T')[0]}.csv`);
             link.style.visibility = 'hidden';
             
             document.body.appendChild(link);
@@ -736,7 +727,6 @@
             alert('Library exported successfully!');
         }
         
-        // Backup Data
         function backupData() {
             toggleMenu();
             
@@ -766,7 +756,6 @@
             alert('Backup created successfully!');
         }
         
-        // Restore Data
         function restoreData(event) {
             toggleMenu();
             
@@ -789,10 +778,9 @@
                         alert('Invalid backup file format.');
                     }
                 } catch (error) {
-                    alert('Error reading backup file. Please make sure it is a valid backup file.');
+                    alert('Error reading backup file.');
                 }
                 
-                // Reset file input
                 event.target.value = '';
             };
             
@@ -814,7 +802,6 @@
             try {
                 const cleanIsbn = isbn.replace(/[^0-9X]/gi, '');
                 
-                // Try Google Books API
                 const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=isbn:${cleanIsbn}`);
                 const data = await response.json();
                 
@@ -833,7 +820,7 @@
                     document.getElementById('isbnInput').value = '';
                     toggleIsbnForm();
                 } else {
-                    if (confirm('Book not found in database. Would you like to enter the book details manually?')) {
+                    if (confirm('Book not found. Enter details manually?')) {
                         openManualEntry();
                         document.getElementById('isbnInput').value = '';
                         toggleIsbnForm();
@@ -843,7 +830,7 @@
                 alert('Error connecting to book database. Please try manual entry.');
             }
             
-            fetchText.textContent = 'Fetch Book';
+            fetchText.textContent = 'Fetch';
         }
         
         function determineAgeRange(subjects, title) {
@@ -878,6 +865,7 @@
         
         function openEditModal(book) {
             editingBookId = book.id;
+            currentBookData = book;
             document.getElementById('modalTitle').textContent = books.find(b => b.id === book.id) ? 'Edit Book' : 'Add Book Details';
             document.getElementById('editTitle').value = book.title || '';
             document.getElementById('editAuthor').value = book.author || '';
@@ -890,6 +878,7 @@
         function closeModal() {
             document.getElementById('editModal').classList.remove('active');
             editingBookId = null;
+            currentBookData = {};
         }
         
         function saveBook() {
@@ -898,7 +887,7 @@
             const shelf = document.getElementById('editShelf').value.trim();
             
             if (!title || !bookcase || !shelf) {
-                alert('Please fill in all required fields (Title, Bookcase, Shelf)');
+                alert('Please fill in Title, Bookcase, and Shelf');
                 return;
             }
             
@@ -909,7 +898,8 @@
                 bookcase: bookcase,
                 shelf: shelf,
                 ageRange: document.getElementById('editAgeRange').value,
-                cover: books.find(b => b.id === editingBookId)?.cover || ''
+                isbn: currentBookData.isbn || '',
+                cover: currentBookData.cover || ''
             };
             
             const existingIndex = books.findIndex(b => b.id === editingBookId);
@@ -925,7 +915,7 @@
         }
         
         function deleteBook(id) {
-            if (confirm('Are you sure you want to delete this book?')) {
+            if (confirm('Delete this book?')) {
                 books = books.filter(b => b.id !== id);
                 saveBooks();
                 renderBooks();
@@ -956,7 +946,7 @@
                             <path d="M4 6h2v12H4V6zm4 0h2v12H8V6zm4 0h6v12h-6V6zm8 0h2v12h-2V6z"/>
                         </svg>
                         <h3>No books yet</h3>
-                        <p>Add your first book by clicking the buttons above</p>
+                        <p>Add your first book using the buttons above</p>
                     </div>
                 `;
                 return;
@@ -1003,7 +993,7 @@
                                             </div>
                                         </div>
                                         <div class="book-actions">
-                                            <button class="btn-edit" onclick='openEditModal(${JSON.stringify(book)})'>
+                                            <button class="btn-edit" onclick='editBookById(${book.id})'>
                                                 <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
                                                 </svg>
@@ -1023,3 +1013,49 @@
                     `;
                 }
             });
+            
+            booksList.innerHTML = html;
+        }
+        
+        function editBookById(id) {
+            const book = books.find(b => b.id === id);
+            if (book) {
+                openEditModal(book);
+            }
+        }
+        
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                const swCode = `
+                    const CACHE_NAME = 'library-v1';
+                    const urlsToCache = ['/'];
+                    
+                    self.addEventListener('install', event => {
+                        event.waitUntil(
+                            caches.open(CACHE_NAME)
+                                .then(cache => cache.addAll(urlsToCache))
+                        );
+                    });
+                    
+                    self.addEventListener('fetch', event => {
+                        event.respondWith(
+                            caches.match(event.request)
+                                .then(response => response || fetch(event.request))
+                        );
+                    });
+                `;
+                
+                const blob = new Blob([swCode], { type: 'application/javascript' });
+                const swUrl = URL.createObjectURL(blob);
+                
+                navigator.serviceWorker.register(swUrl)
+                    .then(reg => console.log('Service Worker registered'))
+                    .catch(err => console.log('Service Worker registration failed'));
+            });
+        }
+        
+        loadBooks();
+    </script>
+</body>
+</html>
+                
